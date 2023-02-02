@@ -1,0 +1,35 @@
+DEvops
+======
+TF:
+	terraform refresh
+	terraform init
+	terraform plan 
+	terraform apply
+======================================================================================
+in creating security group
+
+-1 indicates all protocals its work on from port to port 0
+http://100.25.48.1:8080/
+shygul1601
+Ak@123ram@
+
+for nexus 
+8081
+ 
+ in jenkins using Poll scm we can schedule time for job whivj commited any changes
+ 
+ pipeline utility steps
+======================================================================================
+Ansible Control node using user data
+
+Ansible : Open source management tool
+its provisioning 
+config management
+app deployment
+
+agentless in nature
+declarative can be procedural
+idempotent depending on the module
+
+
+for provisioning we used terraform

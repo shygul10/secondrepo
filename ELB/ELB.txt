@@ -1,0 +1,100 @@
+ELB
+
+Load Balancers are servers that forward traffic to multiple servers
+(eg. EC2 instances) downstream.
+managed load balancer
+
+
+Additional Scalling Settings
+Cooldowns
+Termination Policy
+termination Protection
+Standby state
+
+user data
+#!/bin/bash
+yum update -y
+yum install -y httpd
+systemctl start httpd
+systemctl enable httpd
+EC2AZ=$(curl -s http://169.254.169.2454/latest/meta-data/placement/availability-zone)
+echo '<center><h1>This Amazon EC2 instance is located in Availability Zone: AZID </h1></center>' > /var/www/html/index.txt
+sed "s/AZID/$EC2AZ/" /var/www/html/index.txt > /var/www/html/index.html
+
+
+Types Of LB
+ALB--> 
+ Operates at the request level
+ Routes based on the content of the request (layer 7)
+ Supports path-based routing, host based routing, query string parameter based routing, and source 
+ Ip addess based routing
+ Supports instances , IP addresses , lamda functions and containers as targets.
+ 
+ NLB-->
+ Operates at connection level
+ routes connectiomn based on IP protocol data (layer 4)
+ offers ultra high performance , low latency and TLS offloading at scale
+ can have a static IP/ Elastic IP
+ Supports UDP and static Ip address as targets 
+ 
+ Very llow latency will be NLB
+ 
+ Gateway Load balancer:
+ used in front of virtual appliances such as firewalls, IDS/IPS and deep packet inspection systems
+ operates at layer 3 - listens all packets on all ports
+ forwards traffic to the TG specified in the listeners rules
+ exchange traffic with apps usingg the GENEVE protocol on port 6081.
+=========================================================================================
+ALB                                 | NLB
+7 OSI layer                         | 4
+Http Https gRPC as Protocol listener| TCP UDP TLS
+No private link support				| Tcp Tls
+No static ip address				| yes
+HTTP header based routing yes		| NO
+x forwarded for source ip           |
+preservation                        | Native
+Load balancer SSL termination		| Load balancer or target
+==========================================================================================
+ALB 
+webapp with L7 routing (HTTP/HTTPS)
+microservices architectures (Docker containers)
+lamda targets
+NLB
+TCP and UDP based apps
+Ultro low latency
+static IP addresses
+VPC endpoint services
+GLB
+Load balance virtual appliances such as:
+  IDS IPS NGFW WAF DDoS
+Integrate with Auto scaling groups for elasticity
+Apply network monitoring and logging for analytics.
+==========================================================================================
+Routing ALB
+A rule is configure on listener ALB listten on HTTP/HTTPS
+Requesst can also be route based on the host field in tthe HTTP Header
+Request can be routed based on the path and URL
+  Path based routing
+  Host Based routing
+Target Groups are used to route requests to registered targets
+Targets can be EC2 instancces IP address Lambda function or containers
+=========================================================================
+High Availability & Scalability For EC2
+Vertical Scaling: Increase instance size (=scale up/ down)
+	from t2.nano 0.5gb of ram , 1vCPU
+	to u- 12tb1.mertal -12.3TB of RAM , 448 vCPUs
+	
+============================================================================
+Horizontal scaling : Increase the number of instances (= scale out / in)
+	Auto Scaling groups
+	Load Balancer
+	
+=============================================================================
+High Availability : Runinstances for the same application across multi AZ
+	Auto scaling group multi AZ
+	Load Balancer Multi AZ
+=============================================================================
+
+ 
+ 
+ 

@@ -1,0 +1,192 @@
+ git config --global user.name "shygul10"
+   84  git config --global user.email "shygul10@gmail.com"
+   85  git clone https://github.com/shygul10/1strepo.git
+   86  ls -la
+   87  cd 1strepo/
+   88  echo "this is file1.txt" > file1.txt"
+
+   89  ls -la
+   90  ls
+   91  echo "this is file1.txt" > file1.txt
+   92  ls
+   93  cat file1.txt
+   94  git add file1.txt
+   95  git commit -m "this is file1.txt"
+   96  ls -la
+   97  ls
+   98  nano file2.txt
+   99  ls
+  100  cat file2.txt
+  101  nano file3.txt
+  102  ls
+  103  git add file2.txt file3.txt
+  104  git commit -m "Added file2.txt and file3.txt"
+  105  nano file1.txt
+  106  ls
+  107  clear
+  108  git commit -a -m "Modify file1.txt"
+  109  ls
+  110  git status
+  111  nano filetoignore.txt
+  112  ls
+  113  git status
+  114  git add .gitignore
+  115  nano .gitignore
+  116  ls
+  117  ls -la
+  118  git status
+  119  git add .
+  120  git status
+  121  git commit -m "Created .gitignore file"
+  122  git status
+  123  git push
+  124  ls
+  125  git status
+  126  git pull
+  127  git status
+  128  ls
+  129  cat file3.txt
+  130  ls
+  131  nano file2.txt
+  132  git status
+  133  git add .
+  134  git status
+  135  git commit -m "edited file2.txt locally"
+  136  git status
+  137  git push
+  138  git status
+  139  git status
+  140  git pull
+  141  ls
+  142  cat file2.txt
+  143  clear
+  144  history
+    145  ls
+  146  ls -a
+  147  git log
+  148  ls
+  149  cd 1strepo/
+  150  ls
+  151  git log -p
+  152  git log -1
+  153  git log
+  154  cd 1strepo/
+  155  ls
+  156  ls -a
+  157  git status
+  158  cd ..
+  159  ls
+  160  cd  Desktop/
+  161  mkdir newlocalrepo
+  162  ls
+  163  cd  newlocalrepo/
+  164  ls
+  165  ls -a
+  166  git init
+  167  ls -a
+  168  echo "this is file1.txt created locally" > file1.txt
+  169  ls
+  170  cat file1.txt
+  171  echo "this is file2.txt created locally" > file2.txt
+  172  echo "this is file3.txt created locally" > file3.txt
+  173  ls
+  174  git status
+  175  git add .
+  176  git status
+  177  git commit -m "initial commit"
+  178  git status
+  179  git remote add origin https://github.com/shygul10/secondrepo.git
+  180  git remote -v
+  181  git push -u
+  182   git push --set-upstream origin master
+  183  git remote -v
+  184  git status
+   185  clear
+  186  history
+  187  ls
+  188  echo "this is some content to add" > file4.txt
+  189  git add .
+  190  git status
+  191  git commit -m "added file4.txt in master branch"
+  192  git  status
+  193  git checkout -b newfeauture
+  194  git status
+  195  ls
+  196  echo "this is file5.txt is created inn newfeature branch" > file5.txt
+  197  git status
+  198  git add .
+  199  git status
+  200  git commit -m "created file5.txt"
+  201  git push
+  202  git push --set-upstream origin newfeauture
+  203  git branch
+  204  ls
+  205  git checkout master
+  206  ls
+  207  nano file3.txt
+  208  git status
+  209  git add .
+  210  git commit -m "bugfixx on file3.txt"
+  211  git status
+  212  git log
+  213  git checkout newfeauture
+  214  git cherry -pick eac124137cc6bfcbba0ce81e66c78bebcd102298
+  215  git cherry-pick eac124137cc6bfcbba0ce81e66c78bebcd102298
+  216  cat file3.txt
+  217  ls
+  218  nano file5.txt
+  219  git add .
+  220  git commit -m "newfeauture is done and ready to merged with master branch"
+  221  ls
+  222  cat file1.txt
+  223  cat file4.txt
+  224  echo "lambdafunctions are done by boto camp" > file4.txt
+  225  cat file4.txt
+  226  git add .
+  227  git commit -m "file4 has changed"
+  228  git checkout master
+  229  ls
+  230  cat file4.txt
+  231  echo "newlinein lambda function" >> file4.txt
+  232  git add .
+  233  git commit -m "newline in file4.txt"
+  234  git status
+  235  git branch
+  236  git merge newfeature
+  237  git branch
+  238  cat file4.txt
+  239  ls
+  240  git checkout newfeauture
+  241  ls
+  242  git checkout master
+  243  git branch -D newfeauture
+  244  
+  245  cd ..
+  246  cd ..
+  247  ls -a
+  248  cd .ssh/
+  249  ls
+  250  ssh-keygen -t rsa -b 4096
+  251  ls
+  252  history
+   253  ls
+  254  cat id_rsa.pub
+  255  cd
+  256  ls
+  257  git clone git@github.com:shygul10/secondrepo.git
+  258  ls -a
+  259  cd 1strepo/
+  260  ls
+  261  echo "this is new file" > file4.txt
+  262  git add .
+  263  git commit -m "added new file"
+  264  git push
+  265  cd
+  266  cd Desktop/
+  267  ls
+  268  cd newlocalrepo/
+  269  git config --edit
+  270  cd
+  271  history
+
+

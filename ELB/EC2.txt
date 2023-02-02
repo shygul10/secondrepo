@@ -1,0 +1,116 @@
+EC2
+
+Renting virtual machines (ec2)
+Storing data on virtual drives (ebs)
+Distributing load across machines (elb)
+Scaling the services using an auto scaling group (asg)
+=======================================================
+Bootstrapping means launching cmnds when a machine starts
+user data is used to automate boot tasks such as
+* installing updates 
+* installing software 
+* downloading common files from the internet
+========================================================
+Instance       vCpu  mem (gib)  Storage      N/W performance    EBS bandwidth(Mbps)
+ t2.micro		1		1		EBS-Only	  low to moderate			
+ t2.xlarge		4		16		EBS-Only	  Moderate		
+ c5d.4xlarge	16		32		1*400NVMe SSD	Up to Gbps		4750
+ r5.16xlarge	64		512		EBS Only		20Gbps			13600
+ m5.8xlarge		32		128		EBS Only		20Gbps			6800
+=========================================================
+Ec2 instances types
+Compute:
+ batch processing workloads
+ Media transcoding
+ High performance web servers
+ High performance computing HPC
+ Machine learning
+ Dedicatted gaming servers
+ 
+Memory :
+High Performance, relational/non-relational databases
+Distributed web scale cache stores
+In-memory databases optimized for BI (buisness intelligence)
+Applcation perfforming real time processing of big unstructured data
+
+Storage:
+High Frequency online transaction processing (OLTP) systems
+Relational & Nosql databases
+Cache for in memory database(eg-Redis)
+Data warehousing apps
+Distirubuted file systems
+=============================================================
+SSH = 22 (secure shell) - Log in to a linux istance
+21 = FTP(file transfer protocol) - Uploads files in to a file share
+22 = SFTP (secure file transfer protocol) Uploads files using SSH
+80 = HTTP - Access unsecured websites
+443 =Https - access secured websites
+3389 = RDP Remote desktop protocol - log in to a windows instances
+===============================================================
+Connect SSH through windows 
+
+ssh -i .\pemfile ec2-user@ipaddress
+================================================================
+Ec2 spot instances 
+discount up to 90% compare to on demand
+spot block 
+this instance during a specified time frame (1 to 6hrs) without interruptions 
+in rare situations the instance may be reclaimed
+=================================================================
+Public :
+It can be identified as WWW
+It must be unique across the whole web( means two machines wont be having same ips)
+can be geolocated easily
+
+Private:
+It can be identified as only private network
+This must be unique accross the prive nw
+But two different private nw can have same ips
+machines cconnect to WWW using internat gateway 
+Only Specified range of ips can be used as private ip
+====================================================================
+Note :
+We can use public ip to connect ssh through windows but it will change often
+so we have to allocate elastic ip to instance in which it doesnt change public ip 
+we can use same public ip everytime.
+======================================================================
+Placement Groups:
+Cluster: instances in to a low latency group in a single availability zone
+Spread: intsnces across underlying hardware (max 7 instances per group AZ - Critical apps
+Partition: spreads instances aross many diff partitions (which rely on diff sets of racks) within
+AZ scales to 100s of ec2 instances per group(hadoop,cassandra , kafka)
+========================================================================
+Cluster: Use case
+Big data job that needs to compelete fast
+Application that needs extremely low latency and high network throughput
+ Cons: if the rack fails instance fails at same time
+=========================================================================
+Placement groups Spread: 
+Pros:
+	it can span accross AZ
+	reduced risk is simultaneous failiure
+	Ec2 instances are diff physical hardware
+Cons:
+	Limited to 7 instances per AZ per placement grup
+	
+Use case:
+	Application that needs to maximize the high availability.
+	Critical applications where each instance must be isolated from failiure
+	from each other
+===========================================================================
+Partition:
+	Up to 7 partitionsper AZ
+	can span accross multiple AZs in the same region
+	Up to 100s Of ec2 instances
+	partion should not share the racks with insttances in the other partitions
+============================================================================
+arpita.vzhiring@gmail.com
+============================
+EBS:
+Elastic Block Store voliume is a network drive you can attach to instances while they run
+It allows our instances to persist data even after termination.
+They can only be mounted to one instance at a time (ccp level)
+They are bound to specific AZ.
+=============================================================================
+
+	

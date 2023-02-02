@@ -1,0 +1,36 @@
+Strings --> 
+print("hey this is akram\nthis is asfar\nthis is faaiz")
+\n---> 
+print('e.g. print("Hello" + "world")')
+python input functions
+input("prompt")
+==============================================================
+print("hey this is akram\nthis is asfar\nthis is faaiz")
+print(" this" + " akram")
+print("this" + " " + "akram")
+print("akram" + "weds" + "asfar")
+print(" akram" + " weds" + " asfar")
+print("akram\nweds\nasfar")
+
+print('e.g. print("Hello" + "world")')
+
+input("what is your name?")
+=================================================================
+print("Hai " + input("how are you?")) --> how are you?am fine
+                                          Hai am fine
+
+print(len(""))---> How many size of sttrings
+
+print(len(input("what is your name? "))) --> what is your name? ajdkajsbakjjfkahfak
+                                                       19
+
+variables 
+
+name
+====================================================================
+Which line of Python code is valid?
+a = 12
+Which is the best variable name for Player 1's username?
+player1_username = "akram"
+Which block of code will produce an error? For extra points, which type of error do you think it will produce?
+There is a typo in the last line, it should be time_until_midnight not time_until_Midnight. Because when the name of the variable was used it was not spelt the same, you will get a name error.

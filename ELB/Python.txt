@@ -1,0 +1,52 @@
+Python:
+cs50 ide for office purpose
+
+Variables:
+	A data item that may take on more than one value during the runtime of a program.
+	
+Data Types:
+	integer - 135 125 15249 
+	float - 5.0,1254.63
+	complex - 1+0j (j represents that its complex)
+	string - "hello world", "a" ,'a'
+	boolean - True , False
+
+comments
+ #for a single line comment
+ """ for whole multi line comment"""
+=========================================================================================
+input() always recogonise as string
+
+Assignment operator will use in loop
+comparison operator also use in loop
+comparison operator will be highly used in real time
+
+Logical operator
+and = multply 
+or = addition
+not = inverse
+
+True = 1
+false = 0
+=========================================================================
+operator predence
+(BODMAS)
+ 
+extra data types 
+list []
+set{}
+tuple()
+========================================================================
+list - collections of data types
+array - collection of similar data types
+index - plural
+list can be changeable tupel we cant able to change
+set is unordered and unindexed no duplicates
+========================================================================
+dictonary:
+
+loop
+while loop -> numbers
+
+
+for loop -> str,list,tuple,set,dictonary

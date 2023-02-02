@@ -1,0 +1,6 @@
+Jenkins:
+*)Is an open-source automation tool written in java with plugins
+built for Continuation Integeration purposes. 
+*)It is used to build and test our software projects continously making easier to developers to integrate 
+changes to the projet and making it easier for the users to obtain a fresh build it also allows you to 
+continously  

@@ -1,0 +1,32 @@
+Types Of Load Balancer on AWS:
+Classic Load Balancer (v1 old generation)- 2009 -CLB
+	HTTP HTTPS TCP SSL (secure TCP)
+Application Load Balancer(v2 - New generation) -2016 ALB
+	HTTp HTTps WebSocket
+Network Load Balancer (v2 - new generation) - 2017 NLB
+	TCP TLS (secure TCP) UDP
+Gateway Load balancer 2020 GLb
+		operates at layer 3 (network layer - IP protocol.
+		
+these can be set up as 
+================================================================================
+Hands On 
+Create EC2 instances with user data
+Create ALB 
+create  Sg in ALB
+Create Targetr Group in Alb 
+Selet instances as pending below
+and create ALB 
+=================================================================================
+SSL and TLS:
+SSL --> Secure Sockets Layer used to encypt connections.
+TLS --> Transport layer security which is anew version.
+Tls is used nowadays but ssl is still refering.
+SSL have an certification date (we set) must be renewed.
+================================================================================
+Connection Draining"
+Deregistration Delay - for ALB NLB
+It stop sending new request to the EC2 instance which is de registering.
+Can be disabled (set value to 0)
+set to a low value if your requests are short.
+================================================================================

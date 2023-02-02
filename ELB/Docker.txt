@@ -1,0 +1,32 @@
+Docker:
+dckr is a cointainer technology . its a tool for ceating and managing containers.
+Doocker Ecosystem:
+	Docker Client
+	Docker Machine
+	Docker Hub
+	Docker Server
+	Docker Images
+	Docker Compose
+======================================================================================
+docker file build panna docker image 
+docker image run panna docker containers
+
+to run the docker container use 
+docker run -itd --name apachecontainer -p "8090:80" httpd
+to see what are the containers are running use docker ps
+======================================================================================
+docker architecture:
+=======================
+to run inside docker container
+docker exec -it container id /bin/bash
+docker logs container id to see the logs of particular id
+docker top cotainer id to see the process of this id
+docker stats this used to see cpu utilizatio of id 
+docker inspect to get  compelete details of container id
+docker info to get details about docker running
+
+
+
+
+
+======================================================================================

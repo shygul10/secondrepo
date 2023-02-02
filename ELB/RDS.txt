@@ -1,0 +1,143 @@
+RDS
+Relational database Service
+It managed DB service for DB use SQL as aquery language
+Allows us to create Database in cloud that are managed by AWS
+		Mysql
+		Postgress
+		MariaDB
+		Oracle
+		Aurora
+		Mcrosoft SQL server.
+==============================================================================
+Advantages Over using RDS 
+	Automated provisioning , OS patching.
+	Continous backups and restore to specific timestamp
+	Monitoring dashboards
+	Read replicas for improved read performance
+	Multi AZ setup for DR ( Disaster Recovery)
+	Maintenance windows for upgrades
+	Scaling capability 
+	storage backed by EBS(gp2 or iol)
+
+Disadvantge
+we cant use SSh in to Instances
+==============================================================================
+RDS MUlti AZ ( disaster recovery)
+	Sync replication 
+	
+The read replicas can be setup as MULTI AZ for disaster recovery (DR)
+ yes we can setup our read replicas
+ 
+RDS from single AZ to Multi AZ
+	Zero downtime operation (no need to stop the DB)
+	click on moify for the database
+The following happens ineternally:
+Snapshot is taken 
+New DB is restored from the snapshot in a new AZ
+Sychonization is established between two databases.
+===============================================================================
+Amazon Aurora:
+Is not open Sourced
+Postgress and Mysql are both supported as Aurora DB
+Aurora is AWS cloud optimized 
+Its storage automatically grows in increments of 10GB up to 128TB
+Aurora is having 15 while mysql having 5 replicas. replication process is much faster
+Aurora cost more tha RDS
+===============================================================================
+Aurora DB Cluster
+Writer endpoint --> pointing to master
+
+Reader Endpoint--> Connection load balancing.
+
+Shared storage volume 
+	Auto Expanding from 10G to 12TB
+===============================================================================
+Feautures of Aurora
+	Automatic fail over
+	Backup and Recovery 
+	Isolation and security 
+	Advancced monitoring 
+	Routine Maintenance
+================================================================================
+Advanced Aurora:
+Auto scalling
+Custom Endpoints
+Srverless --> Automatted dB instantion
+Multi Master
+Global Aurora
+Machine Learning
+================================================================================
+RDS Backups
+Automated Backups
+Manual Db snapshots
+================================================================================
+Aurora Backups
+
+Automated Backups
+Manual Db snapshots   
+=================================================================================
+Aurora database cloning
+===========================
+RDS Security
+At rest encryption
+In flight encryption
+IAM Authentication
+Security Groups
+No SSH 
+Audit Logs can be enabled
+=================================================================================
+RDS PROXY:
+	Fullly managed db proxy for rds
+	Allows apps to pool and share DB connecctions established with the databse
+	improving db efficiency by reducing the stress on db resources 
+	Serverless , autoscalling, high available (multi AZ)
+	Reduced RDS & Aurora failover time by 66%
+	Supports RDS and Aurora
+	No code Changes 
+	Enforce IAM authentication for DB 
+	RDS proxy is never public accessible(must be accessed from VPC)
+=================================================================================
+Elasticache 
+
+Redis--> Multi AZ 
+		Read Replicas
+		data durability
+		Backup and restore
+		
+Memcached
+		Multi node for partitioning of data
+		No high availability 
+		non presistent 
+		no backup and restore
+		Multi thread architecture.
+===================================================================================
+Elastic Cache Soln architecture
+Patterns for Elastic cache
+
+
+Important ports:
+
+    FTP: 21
+
+    SSH: 22
+
+    SFTP: 22 (same as SSH)
+
+    HTTP: 80
+
+    HTTPS: 443 
+
+vs RDS Databases ports:
+
+    PostgreSQL: 5432
+
+    MySQL: 3306
+
+    Oracle RDS: 1521
+
+    MSSQL Server: 1433
+
+    MariaDB: 3306 (same as MySQL)
+
+    Aurora: 5432 (if PostgreSQL compatible) or 3306 (if MySQL compatible)
+=====================================================================================

@@ -1,0 +1,37 @@
+S3
+===
+Use cases:
+ Backup and storage
+ Disaster Recovery
+ Archive 
+ Hybrid Cloud storage
+ Application hosting
+ Media hosting
+ Data lakes & big data analytics
+ Software delivery
+ Static website
+===============================================================================
+S3 Buckets:
+	Its allows people to store objects (files) in buckets (directories)
+	Buckets Must have globally umique name ( across all regions all acounts)
+	Buckets are defined at region level
+	S3 looks like a global service but buckets are created in a region
+===============================================================================
+Objects:
+	Objects (files) have a key
+	Objects values are the content of the body
+		Object size is 5TB . If uploading more than 5GB , must use "multi part 
+		                                                               upload"
+	Metadata
+	Tags(unicode key/ value pair up to 10) - useful for security / lifecycle
+	Version ID (if versioning is enabled)
+===============================================================================
+S3 Security
+	User Based 
+		IAM policies - which API calls Should be allowed for a specific user 
+						from IAM
+	Resource Based 
+		Bucket Policies - bucket wide rules from the s3 console - allows cross account
+		Object (ACL) & Bucket (ACL) - can be disabled
+	An IAM principal can access an S3 object if
+		

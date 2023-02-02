@@ -1,0 +1,3 @@
+Nat Gateway and Nat Instances :
+Nat Gateway is used to provide internet access to private subnet but nat instances managed by us and nat gateway manage by aws. Nat Instance is little bit costly when compare to nat gateway.
+Nat gareway will supports up to 10gb of band width. Nat Instances depends on the band width of the instance type.

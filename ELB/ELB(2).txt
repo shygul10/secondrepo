@@ -1,0 +1,6 @@
+EBS:
+Elastic Block Store voliume is a network drive you can attach to instances while they run
+It allows our instances to persist data even after termination.
+They can only be mounted to one instance at a time (ccp level)
+They are bound to specific AZ.
+===================================================================================================

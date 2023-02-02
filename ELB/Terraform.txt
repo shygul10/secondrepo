@@ -1,0 +1,166 @@
+Terraform 
+	It Supports multiple platforms, has hundreds of providers
+	Simple configuration language and faster learning curve
+	Easy integration with configuration management tools like Ansible
+	Easily extesible with help of plugins
+=================================================================================
+Providers
+	Imp: 0.13 terraform version tf requires explicit source information for any 
+	providers that are not Harshi corp maintained 
+	For eg- If we using digital ocean provider which is not harshicorp so we need
+	to use required_providers for that.
+=================================================================================
+cmnds
+terraform init 
+terraform plan
+terraform apply
+terraform destroy 
+terraform refresh -- if any changes we can refresh and see it on tfstate
+terraform init -upgrade --> to upgrade the version 
+
+we can create github repo by using terraform
+terraform {
+  required_providers {
+    github = {
+      source  = "integrations/github"
+      version = "~> 5.0"
+    }
+  }
+}
+
+# Configure the GitHub Provider
+provider "github" {
+    token = "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" (on github settings on developer setting we can access token )
+}
+
+
+resource "github_repository" "example" {
+  name        = "mytfrepo"
+  
+
+  visibility = "private"
+
+
+}
+====================================================================================
+if we need to delete specifc we can use terraform destroy -target 
+*/  --> which means it won affect if you give terraform plan it wiill automatically delete
+================================================================================
+Desire state :
+	t2.micro 
+Current State:
+	t2.medium
+================================================================================
+Attribute and Output values in terraform
+Attributes:
+variables 
+	it can be assigned values in multiple ways
+	
+	Environmental Variables
+	command line flags
+	from a file
+	Variable defaults
+	
+in ec2instance we can change instance type by using terraform 
+in CLI terraform plan -var="instancetype=t2.small"
+
+================================================================================
+variable "instancetype" {
+  default = "t2.micro"
+}
+===========================================
+variable "instancetype" {
+}
+when we give terraform plan it will ask value 
+enter a value = t2.medium
+
+then it will change as t2.medium
+
+if we need to apply the specific file custom.tfvars(file name) 
+terraform plan -var-file="custom.tfvars"
+
+for windows we can set instancetype by using setx TF_VAR_instancetype t2.micro
+to see the echo %TF_VAR_instancetype% t2.micro
+for linux we use export TF_VAR_instancetype t2.micro
+==================================================
+in production geerally we will working on tf.vars files
+ to create multiple instance in tf just use count 
+ count index in resource blocks where count is set.
+ the distint index number (starting with 0) corresponding to this instance.
+ eg. for iam user or any services  we cant able to keep same name for all services
+ so for that issues we use name = "name.${count.index}"
+=================================================================================
+conditional:
+id developer need to run specific instance we shoudl use variable "istest" {}
+under ec2 instance count = var.istest == true ? 1 : 0
+which means if its true it will take one if instance 
+==================================================================================
+to use functions 
+in CLI enter terraform console 
+max(1,2,3) - addition 
+min(3,2,1) - subract
+
+===================================================================================
+TRACE
+
+TF_LOG_PATH
+
+terraform fmt is to align the terraform code format
+terraform validate is to validate the code whether any error arguement came
+even if we split multiple tf file tf plan will work 
+terraform taint - forcing it to be deleted and recreated on next apply
+
+use terraform taint file name
+
+taint command will not modify infrastructure but does not modify the state file in 
+order to make a resource as tainted
+
+splat expression - is to list of all attributes
+===================================================================================
+terraform graph command is used to generate a visual representation of either a 
+configuration or execution plan.
+Output of this will be dot format and easily can be converted in to an image.
+====================================================================================
+to save file from plan 
+terraform plan -out=demopath
+
+when we have a larger infrastructure we will face issue related to API limits for 
+a provider
+switch to smaller configuration were each can be applied independently.
+=================================================================================
+SET is used to store multiple items in a single variable and these are unordered
+and nno duplicates allowed.
+==================================================================================
+Provisioners:
+	local-exec
+	remote-exec
+===================================================================================
+Creation Time provisioner: these are only run dueing creation, not during updating or 
+any other lifecycle
+Destroy provisioners are run before the resources is destroyed.
+===================================================================================
+Null Resources:
+it implements the standard resource lifecycle but takes no further action.
+====================================================================================
+*)to run a specific program in local laptop after terraform creates a resource we use local-exec
+*)when a provisoner is fails the terraform apply operation shoul continue and not fail we use - onfailiure=continue
+======================================================================================
+DRY Approach : Dont repeat yoursellf is a principal of software development aimed at reducing repition of
+software patterns.
+Challenges in Terraform
+	staging -- t2.micro
+	production -- m4.large
+	
+terraform workspace 
+terraform workspace show -- 
+terraform workspace -h 
+ delete    Delete a workspace
+    list      List Workspaces
+    new       Create a new workspace
+    select    Select a workspace
+    show      Show the name of the current workspace
+=======================================================================================
+in git dont store any password or secret key files because in terraformtfstate 
+file password will be shown so dont store in git.
+========================================================================================
+local path must begin with either./ or../ to indicate that a local path is intended.

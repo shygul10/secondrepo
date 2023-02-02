@@ -1,0 +1,20 @@
+Project:
+Tools
+	Hypervisor - Vm virtualbox
+	Automation - Vagrant
+	CLI - Git Bash
+	IDE - Sublime text , VSC
+===================================================================
+Architecture Of Project services
+Nginx
+Tomcat
+RabbitMQ
+Memcached
+Mysql
+===================================================================
+Architecture of Automated Setup
+Vagrant
+VirtualBox
+GitBash
+===================================================================
+NFS(search for Future)

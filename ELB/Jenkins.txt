@@ -1,0 +1,22 @@
+Jenkins
+	It is an open source continous integration (CI) and continous delivery (CD) tool written in Java.
+	Its an automation server used to build and deliver software project.
+	
+	CI/CD:
+	CI --> merging all devoloper working copies
+	CD --> team produce software in short cycles.
+		
+		For every commit or at least once a day
+		jenkins doesnt merger code .
+	===================================================================================
+	Jenkins Alternatives:
+	Self Hosted:
+		Drone CI
+		Team City (by jetbrains)
+	Hosted	
+		Wercker
+		circleCI
+		Codeship
+		SemaphoreCI
+	===================================================================================
+	

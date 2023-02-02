@@ -1,0 +1,70 @@
+EC2
+Is a way we can run virtual servers in the cloud.
+Ec2 hosts are managed by aws. an ec2 instance is a virtual server(website,windows OS).
+Ec2 instances run windows, linux, or macOS.
+Selection of instances types comes with varying combinations of CPU, memoey , storage and networking.
+======================================================================================
+Launching an EC2 Instance:
+The instance type defines the hardware profile (and cost)
+An AMI defines the configuration of the instance
+An snapshot is a point in time backup of an instance. 
+You can customize your instance and create custom AMI.
+======================================================================================
+Ec2 user data and meta data
+USER DATA:
+[#!/bin/bash
+yum update -y
+yum install -y httpd
+systemctl start httpd
+systemctl enable httpd
+EC2ID=$(curl -s http://169.254.169.254/latest/meta-data/instance-id)
+echo '<center><h1>The instance ID of this Amazon EC2 instance is: EC2ID </h1></center>' >/var/www/html/index.txt
+sed "s/EC2ID/$EC2ID/" /var/www/html/index.txt > /var/www/html/index.html]
+this code helps to installing a web service.
+it will limited 16kb
+ec2 instance with a webservice is launched 
+batch and power shell scripts can be run on windows.
+
+User data gives the ability to run commands when the system is starting and meta data can return the information thats recorded locally.
+======================================================================================
+EC2 placement group
+Cluster - uses enhanced nw,low nw latency and high throughput for inter instance traffic. 
+Partition - Each partition is located on seperated AWS rack.Partitions can be in multipe AZs(up to 7 per AZ)
+Spread - Small number of critical instances that should be kept seperate from each other.
+==============================================================
+Elastic NW Interface(ENI)
+Basic adapter type for when we dont have any high performance requirements.
+Can use with all instance types.
+Elastic NW adapter (ENA)
+Enhanced nw performance
+Higher bandwidth and lower inter instance latency
+Must choose supported instance type
+Elastic Fabric Adapter(EFA)
+Use with High performance
+computing and MPI (message passing Interface) and ML (machine learning)use cases
+Tightly coupled appps
+can use all instance types
+=============================================================
+
+ Ec2 Instance Lifecycle 
+ 
+ AMI -->             Pending
+                       |
+			           |     Stop         
+Rebooting-->	 <- - Running --> Stopping
+                       |
+                       |     Stop-Hibernate
+                    Shutting down
+                       |
+                       |
+                    Terminated
+
+Stop and Stop Hibernnate(SH) ---> SH is only applicable to EBS backed Instances.	
+		
+Hibernating EC2 Instancces 
+ Applies to on demand or reserved linux instannces
+ 
+================================================================
+Ec2 Niitro instances and enclaves
+Ec2 pricing 
+Update --> Per second is now also available for windows instances 

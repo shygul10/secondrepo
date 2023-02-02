@@ -1,0 +1,120 @@
+GIT
+Version Control system 
+
+Git or git
+
+Git refers to  version control system 
+git refers to use as commannds like git commit , git push
+===========================================================
+git command
+
+global settings
+git config --global user.name "Akram"
+git config --global user.email "shygul10@gmail.com"
+
+specific repository settings
+git config user.name""
+git config user.email""
+
+git clone
+git clone https://github.com/shygul10/firstrepository.git
+
+=============================================================
+echo "this is file1.txt" > file1.txt
+>> -- it doesnot ovverride 
+cat file1.txt
+git add file1.txt ( Add file contents to the index)
+()
+
+git commit -m "added file1.txt" (Record changes to the repository)
+
+(git commit [-a | --interactive | --patch] [-s] [-v] [-u<mode>] [--amend]
+	   [--dry-run] [(-c | -C | --squash) <commit> | --fixup [(amend|reword):]<commit>)]
+	   [-F <file> | -m <msg>] [--reset-author] [--allow-empty]
+	   [--allow-empty-message] [--no-verify] [-e] [--author=<author>]
+	   [--date=<date>] [--cleanup=<mode>] [--[no-]status]
+	   [-i | -o] [--pathspec-from-file=<file> [--pathspec-file-nul]]
+	   [(--trailer <token>[(=|:)<value>])…​] [-S[<keyid>]]
+	   [--] [<pathspec>…​])
+	   
+git commit -a -m "modified msg" [This wont work for new files that are not under git conttrol  yet]
+
+git status -->
+==============================================================
+git command basics
+                  git add                  git commit
+working directory ---->stagging /index area-----> local git rrepository
+
+================================================================
+like vi editor in linux 
+here we use nano 
+ctrl+0 and enter --> save 
+ctrl+x ---> exit
+nano .gitignore (.--> hidden files)
+
+git add . (it indicates add all file in to one)
+=================================================================
+git ignore--> gitignore should list the names or name-patterns of files 
+that will be found in work-trees when working with your project, but that should not be committed to the project. 
+In other words, it's not OS-specific, it's project-specific.
+==================================================================
+git push and pull?
+git log --> it shows all commits we made
+git log  -2 or any numbber it shows specific commits  we created
+==================================================================
+to add specific repo through remote
+git remote add origin url(repo)
+to see whether its working 
+git init
+git remote -v 
+git push -u it sets default remote repo
+===================================================================
+git checkout
+git checkout -b --> creaates and switch to new branch
+git checkout branch  name 
+
+git branch --> checks currently we are  in which branch or list the branches
+git branch -D (branch name) to delete the specific branch
+
+git cherry-pick is used to pick the specific code mentioned in git log 
+====================================================================
+ Git interna  
+Branches--> Empty to begin with (possibility to define URL shortcuts for git pull/push)
+config:configuration file for this respository
+Description:Contains short sample description for repository
+HEAD: Text file that points the current commit of current branch
+hooks: Exampples sccripts to be executed
+info/exclude:similar to .gitignore
+index (git add): internal storage for staging area
+logs (git commit):Contains summary of all actions that changes current branch
+objects:git stores all data in binary files  here..
+refs:reference to commits or objects
+=================================================================================
+Git stores four types of objects in  .git/objects:
+commit
+Blob --> binary large objects (like files)
+Tree is like directory
+Tags
+---------------------------------------------------------
+References refer to specific objects
+ .git/ref/heads & .git/ref/remote -> most recent commit of branches
+ .git/refs/tags -> tagged commits
+ .gitHEAD-> cat .git/HEAD
+              ref: refs/heads/develop
+			  
+===================================================================================
+git show :
+git show HEAD:
+git status --long
+git gc --> garbage collector
+git mv --> 
+for copy there is no command for git instead of that cp (file)(newfilename)
+                                                     git add
+													 git commit...
+git rm <filename>
+git rm --force<> (cant be restored)
+
+ 
+
+
+

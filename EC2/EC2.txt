@@ -1,0 +1,5 @@
+EC2
+Is a way we can run virtual servers in the cloud.
+Ec2 hosts are managed by aws. an ec2 instance is a virtual server(website,windows OS).
+Ec2 instances run windows, linux, or macOS.
+Selection of instances types comes with varying combinations of CPU, memoey , storage and networking.

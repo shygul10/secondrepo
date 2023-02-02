@@ -1,0 +1,73 @@
+IAM:
+Setting up the Role(Designation) based access rights to the Employee on AWS services.
+Users , Group , Role , Policies
+IAM Groups:
+Admin Group     Development Group   Operation Group 
+IAM Roles:
+Is an identity that has specific permissions. 
+Roles are assumed by users, applications and services.
+Once assumed the identity becomes the role and gain the roles permissions.
+IAM policies:
+Administrator Access
+{
+    "Version": "2012-10-17",
+	"Statement": [
+	    {
+		     "Effect": "Allow",
+			 "Action": "*",
+			 "Resource": "*"
+		}
+	]
+}
+Identity based policy can be applied to users,group and roles
+
+Bucket Policy:
+where resourse based policies can be apllied to resources such as s3 or dynamdb.
+=================================================================================
+AWS  STS (security token services)
+This is the service provides temperory credentials or  Short livved.
+*)EC2 attempts to assume role (sts:AssumeRole API call)
+*) Trust policies control who can assue the role
+*)temperory credentials are returned
+*)credentials Includes-->Acceskey,Expiration,secretaccesskey,sessionToken.
+*)Temperory credentials are uuse with identity federation,delegation ,cross accounts access,and IAM roles
+===================================================================================
+Identity base policy and Resource base policy
+
+Identity based Policis aree JSON permissions  policy documents that  control what actions an identify 
+can perform, on which resources , and under what conditions.
+Inline Policy: These policies have a 1-1 relationship with the user , group or role.
+Manage policies: It will have either AWS managed or customer managged.
+AWS managed are managed by AWS , so customer managed created or managed by us.
+Managed Policies are standalone policies thatt can be attached to multiple users, groups,or roles.
+=====================================================================================
+Resource Based Policies: 
+These are JSON policy documents that we attached to a resource such as Amazon S3 bucket.
+These policies grant the specified principal (user) permission to perform specific actions on the resource.
+From IAM we ctreate two policies Trust and Permissions policy where trust is resource base and permission is identity based poilcies.
+======================================================================================
+Steps for Authorizing Request to AWS
+*)Authentication - AWS authenticates the principal that makes the request.
+*)Procession the request context:
+Action - the actions or operations the principal wants to perform. 
+Resources - The AWS resource object upon which actions are performed.
+Principal - The user , role, federated user , or appplication that sent the request.
+Environment Data - Information about the IP address, user agent SSL status, or time of day.
+Resource data - Data related to  the resource that is being requested.
+*)Evaluating all policies within the accounts
+*) Determining whether a request is allowed or denied.
+=====================================================================================
+Several types of policy:
+
+So identity-based policies that we attach to users, groups, or roles, 
+resource based policies attachhed to aresource;define permissions for a principal accessing the resource.
+IAM permissions boundary, set the maximum periissions an identity based policy cann grannt an IAM entity.
+AWS Organizations, Service Control Policies specifies the maximum permissions for an OU
+Session policies used with assumerole API actions.
+====================================================================================== 
+IAM Policy:
+Effect: the effect element can be Allow or deny
+Action: The action element is the specific API action for which you are granting or denying permisssion.
+Resource: the resource element specifies the resource that's afected by tthe action
+Condition: This one used to control when our policy is in effect.
+========================================================================================

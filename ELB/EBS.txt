@@ -1,0 +1,37 @@
+EBS:
+Elastic Block Store voliume is a network drive you can attach to instances while they run
+It allows our instances to persist data even after termination.
+They can only be mounted to one instance at a time (ccp level)
+They are bound to specific AZ.
+===================================================================================================
+Ebs Snapshots:
+Features:
+EBS snapshot archive
+recycle bin for ebs snapshots
+fast snapshot restore
+====================================================================================================
+Steps:
+Create Volume and attach to instances 
+Az should be same 
+
+Snapshots :
+By  volume create Snapshots and by snapshots ceate volume with different AZS and add recycle bin
+Then delete the snapshots and check on recycle bin resources and restore from there.
+====================================================================================================
+AMI:
+Amazon mahine image
+
+These are customization of EC2 instance
+AMI built for specific region ( and can be copied across regions)
+Can launch Ec2 instances from:
+Public AMIOwn ami
+AWS marketplace AMI
+===================================================================================================
+Ebs Volume types:
+gp2/gp3 (SSD): genereal purpose that balances price and performance for a wide variety of worloads
+io1/io2: Highest performance for mission critical low latency or high througouy workloads
+st1(HDD): low cost designed for frequenttlly accessed throughput intensive worloads
+sc1 (HDD): Low cost desighed for less frequently access workloads
+
+Only SSD used as Boot volumes
+==============================================================================================

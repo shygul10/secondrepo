@@ -1,0 +1,97 @@
+Devops:
+Requirements:
+  Product features
+  Users
+  Usage
+  User Requirement
+  Market State
+=========================
+Planning 
+What we need ?
+ Cost 
+ Resources and 
+ Risk
+=========================
+Design Architects
+Development Phase (developers)
+Testing quality Assusrance
+==========================
+Deployment system admins 
+
+SDLC --> Software development lifecycle 
+
+Waterfall
+agile 
+spiral
+bigbang
+.....
+==========================================
+Agile --> fast annd 
+Code channges 
+Deploy 
+Test/QA
+in a single iteration
+============================================
+Continous Integrationn is Automated process in devops
+Code stores in centralized repo is called version contrl system (github)
+the code will be moved to build server on build server it will build tested and evaluated through artifact
+this will be stored in software repo
+
+Advantage or Goal of CI process is detect defects at a very early stages so it does not multiply
+Identify 
+Bugs 
+Issues
+(fully automated)
+
+==============================================
+IDE
+ Eclipse 
+ visual Studio
+ ATOM
+ Pycharm
+
+Version control
+ Git
+ SVN
+ TFS
+
+Build Tools
+ maven
+ msbuild , visual build
+ IBM urban code
+ MAKE
+ 
+Software Repo
+ Sonartype exus
+ Jfrog Artifactory
+ Archiva
+ Grunt
+ 
+ CI Tools
+ Jenkins
+ CircleCI
+ Teamcity
+ Bamboo CI
+ Cruise Cntrl
+===================================================
+Continous Delivery (CD) is an automated process of delivering code changes to servers qyuckly and efficiently.
+
+Deployment
+ Server Provisioning 
+ depenndencies
+ Conf Changes
+ Network
+ Artifact Deploy
+ 
+Tools
+Ansible 
+Terraform 
+Jenkins
+helm chharts
+code deploy
+
+
+
+
+ 
+ 

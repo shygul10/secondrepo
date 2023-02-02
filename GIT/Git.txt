@@ -1,0 +1,56 @@
+GIT
+Version Control system 
+
+Git or git
+
+Git refers to  version control system 
+git refers to use as commannds like git commit , git push
+===========================================================
+git command
+
+global settings
+git config --global user.name "Akram"
+ls 
+
+specific repository settings
+git config user.name""
+git config user.email""
+
+git clone
+git clone https://github.com/shygul10/firstrepository.git
+
+=============================================================
+echo 
+cat file1.txt
+git add file1.txt ( Add file contents to the index)
+()
+
+git commit -m "added file1.txt" (Record changes to the repository)
+
+(git commit [-a | --interactive | --patch] [-s] [-v] [-u<mode>] [--amend]
+	   [--dry-run] [(-c | -C | --squash) <commit> | --fixup [(amend|reword):]<commit>)]
+	   [-F <file> | -m <msg>] [--reset-author] [--allow-empty]
+	   [--allow-empty-message] [--no-verify] [-e] [--author=<author>]
+	   [--date=<date>] [--cleanup=<mode>] [--[no-]status]
+	   [-i | -o] [--pathspec-from-file=<file> [--pathspec-file-nul]]
+	   [(--trailer <token>[(=|:)<value>])…​] [-S[<keyid>]]
+	   [--] [<pathspec>…​])
+	   
+git commit -a -m "modified msg" [This wont work for new files that are not under git conttrol  yet]
+==============================================================
+git command basics
+                  git add                  git commit
+working directory ---->stagging /index area-----> local git rrepository
+
+================================================================
+like vi editor in linux 
+here we use nano 
+ctrl+0 and enter --> save 
+ctrl+x ---> exit
+
+=================================================================
+git push and pull?
+git log --> it shows all commits we made
+
+
+

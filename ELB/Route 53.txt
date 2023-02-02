@@ -1,0 +1,12 @@
+DNS
+
+Route 53
+sudo yum install -y bind-utils
+
+after registered domains 
+create records from Hosted zone 
+and after creating connect with cloudshell and do nslookup and dig(respective record)
+
+Create 3 ec2 instances in diff region 
+and create load balancer
+get the ip from ALL 3 instance and dns from alb

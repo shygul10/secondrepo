@@ -1,0 +1,3 @@
+Create Ec2 instance with User data 
+with SSH 
+Http allow
