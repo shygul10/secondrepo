@@ -1,0 +1,46 @@
+Splunk
+Monitoring Tool 
+	Application 
+	server 
+	network 
+	database
+other tool: ELK, Datadog, New RELIC
+======================================================================================
+Splunk is 
+Log Monitoring its not open source --Enterprise product
+	Log: its an even or record in text and number
+	we can monitor Server-Ec2-login-commands
+
+Main purpose was log is tracking
+
+Sucess rate/password reset/loan who and all did we can see through splunk.
+======================================================================================
+Types of Logs:
+ERROR.Log
+SERVER.LOG 
+APPLICATION.LOG 
+Developer will decid tha name of logs 
+devops will do maintainance 
+
+MIDDLEWARE.LOGS 
+======================================================================================
+Path of Log:
+linux : 
+we cant able to change the log path only devoloper can do
+======================================================================================
+60 days trial pack
+Slave - Ec2 instance
+wget -O splunkforwarder-9.0.3-dd0128b1f8cd-Linux-armv8.tgz "https://download.splunk.com/products/universalforwarder/releases/9.0.3/linux/splunkforwarder-9.0.3-dd0128b1f8cd-Linux-armv8.tgz"
+master - 1 ec2 instance 
+wget -O splunk-9.0.3-dd0128b1f8cd-Linux-x86_64.tgz "https://download.splunk.com/products/splunk/releases/9.0.3/linux/splunk-9.0.3-dd0128b1f8cd-Linux-x86_64.tgz"
+its user interface
+
+======================================================================================
+Components
+Search Head-- search bar - logs
+indexer - 
+forwarders
+
+if we want 100 slave we need 100 forwarders
+to extract compressed file in linux use 
+tar -xvzf

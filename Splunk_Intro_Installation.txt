@@ -1,0 +1,144 @@
+
+What is Splunk?
+
+- Splunk is Google for your machine data.
+- It’s a software/Engine which can be used for searching,visualizing,Monitoring,reporting etc of your enterprise data.
+- Splunk takes valuable machine data and turns it into powerful "Operational Intelligence" by providing realtime insight to your data through charts, alerts, reports etc
+
+
+
+Why Splunk?
+
+- To understand the complex logs.
+- For better look and feel.
+- Splunk can store and process large amounts of data, data analysts.
+- Dashboards meant for Great visualization.
+- If you have a machine which is generating data continuously and you want to analyze the machine state in real time.
+
+
+
+Components of splunk:
+=====================
+1) Search head  – provides GUI for searching
+
+2) Indexer – indexes machine data
+
+3) Forwarder - Forwards logs to Indexer
+
+4) Deployment server - Manages splunk components in distributed environment
+
+
+
+Downloads:
+==========
+Splunk:
+wget -O splunk-8.1.0-f57c09e87251-Linux-x86_64.tgz 'https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&platform=linux&version=8.1.0&product=splunk&filename=splunk-8.1.0-f57c09e87251-Linux-x86_64.tgz&wget=true'
+
+Splunk Forwarder:
+wget -O splunkforwarder-8.1.0.1-24fd52428b5a-Linux-x86_64.tgz 'https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&platform=linux&version=8.1.0.1&product=universalforwarder&filename=splunkforwarder-8.1.0.1-24fd52428b5a-Linux-x86_64.tgz&wget=true'
+
+
+Default Splunk Port# are :
+==========================
+Splunk Web Port: 8000
+Splunk Management Port: 8089
+Splunk Indexing Port: 9997
+Splunk Index Replication Port: 8080
+Splunk network port: 514 (Used to get data in from netwok port i.e. UDP data)
+
+
+
+Splunk Indexer:
+
+The indexer is the Splunk Enterprise component that creates and manages indexes. 
+The primary functions of an indexer are:
+- Indexing incoming data.
+- Searching the indexed data.
+- Picture
+
+
+Splunk Forwarder & types:
+
+There are two types of splunk forwarder as below
+a) Universal forwarder(UF) - You can opt for an universal forwarder if you want to forward the raw data collected at the source. It is a simple component which performs minimal processing on the incoming data streams before forwarding them to an indexer.
+
+b) Heavy weight forwarder(HWF) – You can use a Heavy forwarder and eliminate half your problems, because one level of data processing happens at the source itself before forwarding data to the indexer. Heavy Forwarder typically does parsing and indexing at the source and also intelligently routes the data to the Indexer.
+
+
+Splunk licenses:
+
+- Enterprise license
+- Free license
+- Forwarder license
+- Beta license
+- Licenses for search heads (for distributed search)
+- Licenses for cluster members (for index replication)
+
+
+
+After the download, Install Splunk & Splunk Forwarder, using below,
+
+==================================================================================
+root@ip-172-31-19-175:~/splunk/bin# ./splunk start --accept-license
+
+This appears to be your first time running this version of Splunk.
+
+Splunk software must create an administrator account during startup. Otherwise, you cannot log in.
+Create credentials for the administrator account.
+Characters do not appear on the screen when you type in credentials.
+
+Please enter an administrator username: admin
+Password must contain at least:
+   * 8 total printable ASCII character(s).
+Please enter a new password:
+Please confirm new password:
+
+==================================================================================
+root@ip-172-31-19-175:~/splunkforwarder/bin# ./splunk start --accept-license
+
+This appears to be your first time running this version of Splunk.
+
+Splunk software must create an administrator account during startup. Otherwise, you cannot log in.
+Create credentials for the administrator account.
+Characters do not appear on the screen when you type in credentials.
+
+Please enter an administrator username: admin
+Password must contain at least:
+   * 8 total printable ASCII character(s).
+Please enter a new password:
+Please confirm new password:
+
+
+
+https://docs.splunk.com/Documentation/Splunk/8.0.5/Admin/Listofconfigurationfiles
+
+
+==================================================================================
+1. From Splunk system, execute the below command to enable splunk to listen to the opened port#,
+
+[root@ip-172-31-25-131 bin]# ./splunk enable listen 9997
+Splunk username: admin
+Password:
+Listening for Splunk data on TCP port 9997.
+[root@ip-172-31-25-131 bin]#
+
+
+==================================================================================
+2. From Splunk Forwarder system, execute the below command to enable the forward server to Splunk server,
+
+[root@ip-172-31-21-192 bin]# ./splunk add forward-server <Master_IP>:9997
+Splunk username: admin
+Password:
+Added forwarding to: 35.154.62.215:9997.
+[root@ip-172-31-21-192 bin]# 
+
+
+==================================================================================
+3. From Splunk Forwarder system, execute the below command to map the indexing location,
+
+
+[root@ip-172-31-21-192 bin]# ./splunk add monitor /var/log/syslog -index main
+Added monitor of '/var/log/syslog'.
+[root@ip-172-31-21-192 bin]#
+
+==================================================================================
